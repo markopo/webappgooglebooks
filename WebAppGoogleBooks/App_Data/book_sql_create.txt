@@ -3,6 +3,7 @@
 
 CREATE TABLE [dbo].[Book] (
     [Id]   BIGINT IDENTITY (1, 1) NOT NULL,
+	[ItemId] nvarchar(50) null, 
     [Title] nvarchar(1000) null,
     [SubTitle] nvarchar(200) null,
     [Publisher] nvarchar(200) null,
@@ -23,7 +24,6 @@ CREATE TABLE [dbo].[Book] (
     PRIMARY KEY CLUSTERED ([Id] ASC)
 );
 
-
 CREATE TABLE [dbo].[Category] (
     [Id]   BIGINT IDENTITY (1, 1) NOT NULL,
 	[BookId] BIGINT NOT NULL, 
@@ -34,7 +34,6 @@ CREATE TABLE [dbo].[Category] (
 )
 
 alter table Category add constraint category_fk0 foreign key (BookId) references Book
-
 
 CREATE TABLE [dbo].[Author] (
     [Id]   BIGINT IDENTITY (1, 1) NOT NULL,
@@ -47,3 +46,26 @@ CREATE TABLE [dbo].[Author] (
 
 alter table Author add constraint author_fk0 foreign key (BookId) references Book
 
+CREATE TABLE [dbo].[Errorlog] (
+    [Id]   BIGINT IDENTITY (1, 1) NOT NULL,
+	[Message] nvarchar(1000) not null,
+	[Stacktrace] nvarchar(max) not null,
+	[Created] datetime not null, 
+	PRIMARY KEY CLUSTERED ([Id] ASC)
+)
+
+
+/*
+Select * From Book
+Select * From Author 
+Select * From Category
+Select * From Errorlog 
+
+Delete From Book
+Delete From Author 
+Delete From Category
+
+DROP TABLE Author 
+DROP TABLE Category
+DROP TABLE Book
+*/ 
