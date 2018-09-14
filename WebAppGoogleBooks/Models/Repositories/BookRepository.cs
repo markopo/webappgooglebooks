@@ -26,7 +26,12 @@ namespace WebAppGoogleBooks.Models.Repositories
 
             using(ISession session = OpenSession())
             {
-                books = session.Query<Book>().ToList();
+                using (ITransaction transaction = session.BeginTransaction())
+                {
+                    books = session.Query<Book>().WithOptions(o => o.SetCacheable(true)).ToList();
+                    transaction.Commit(); 
+                }
+
                 session.Close(); 
             }
 
@@ -39,13 +44,18 @@ namespace WebAppGoogleBooks.Models.Repositories
 
             using (ISession session = OpenSession())
             {
-                book = session.Query<Book>().FirstOrDefault(x => x.Id == id);
+                using (ITransaction transaction = session.BeginTransaction())
+                {
+                    book = session.Query<Book>().WithOptions(o => o.SetCacheable(true)).FirstOrDefault(x => x.Id == id);
 
-                // Categories
-                NHibernateUtil.Initialize(book.Categories);
+                    // Categories
+                    NHibernateUtil.Initialize(book.Categories);
 
-                // Authors 
-                NHibernateUtil.Initialize(book.Authors); 
+                    // Authors 
+                    NHibernateUtil.Initialize(book.Authors);
+
+                    transaction.Commit(); 
+                }
 
                 session.Close(); 
             }
