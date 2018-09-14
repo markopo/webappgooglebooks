@@ -1,0 +1,79 @@
+﻿@using WebAppGoogleBooks.Models.ViewModels;
+
+@model BookDetailsViewModel
+
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="panel">
+    <div class="panel-heading">
+        <div class="panel-title">
+            <h1>@Model.Book.Title</h1>
+        </div>
+    </div>
+    <div class="panel-body">
+        <table class="table">
+            <tr>
+                <td>ItemId:</td>
+                <td>@Model.Book.ItemId</td>
+            </tr>
+            <tr>
+                <td>Title:</td>
+                <td>@Model.Book.Title</td>
+            </tr>
+            <tr>
+                <td>Subtitle:</td>
+                <td>@Model.Book.SubTitle</td>
+            </tr>
+            <tr>
+                <td>Publisher:</td>
+                <td>@Model.Book.Publisher</td>
+            </tr>
+            <tr>
+                <td>Publisheddate:</td>
+                <td>@Model.Book.PublishedDate</td>
+            </tr>
+            <tr>
+                <td>ISBN10:</td>
+                <td>@Model.Book.ISBN10</td>
+            </tr>
+            <tr>
+                <td>ISBN13:</td>
+                <td>@Model.Book.ISBN13</td>
+            </tr>
+        </table>
+        <hr />
+
+        <h4>Categories</h4>
+        <ul>
+            @foreach (var c in Model.Book.Categories)
+            {
+                <li>@c.Name</li>
+            }
+        </ul>
+        <hr />
+
+
+        <h4>Authors</h4>
+        <ul>
+            @foreach (var c in Model.Book.Authors)
+            {
+                <li>@c.Name</li>
+            }
+        </ul>
+        <hr />
+
+        <div>
+            <h4>Description:</h4>
+            <div>
+                @Model.Book.Description
+            </div>
+        </div>
+        <hr />
+
+    </div>
+</div>
+
+

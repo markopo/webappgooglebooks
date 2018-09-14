@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="WebAppGoogleBooks"
+                   namespace="WebAppGoogleBooks.Models">
+
+  <class name="Author" table="Author" dynamic-update="true" >
+    <cache usage="read-write"/>
+    <id name="Id">
+      <generator class="native" />
+    </id>
+    <property name="Name"  />
+    <property name="Created" type="DateTime" />
+    <property name="Updated" type="DateTime" />
+    <many-to-one name="Book" class="Book" column="BookId" not-null="true"/>
+  </class>
+</hibernate-mapping>

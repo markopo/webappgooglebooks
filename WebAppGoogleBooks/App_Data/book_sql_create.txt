@@ -1,0 +1,49 @@
+﻿-- Select * From [dbo].[Book]
+
+
+CREATE TABLE [dbo].[Book] (
+    [Id]   BIGINT IDENTITY (1, 1) NOT NULL,
+    [Title] nvarchar(1000) null,
+    [SubTitle] nvarchar(200) null,
+    [Publisher] nvarchar(200) null,
+    [PublishedDate] nvarchar(20) null,
+    [Description] nvarchar(max) null,
+    [PageCount] nvarchar(10) null,
+    [PrintType] nvarchar(20) null,
+    [AverageRating] nvarchar(10) null,
+    [ThumbNail] nvarchar(1000) null,
+    [Language] nvarchar(20) null,
+    [CanonicalVolumeLink] nvarchar(1000) null, 
+    [WebReaderLink] nvarchar(1000) null,
+    [PdfLink] nvarchar(1000) null,
+    [ISBN13] nvarchar(100) null,
+    [ISBN10] nvarchar(100) null,
+	[Created] datetime not null, 
+	[Updated] datetime not null
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+
+CREATE TABLE [dbo].[Category] (
+    [Id]   BIGINT IDENTITY (1, 1) NOT NULL,
+	[BookId] BIGINT NOT NULL, 
+	[Name] nvarchar(200) not null,
+	[Created] datetime not null, 
+	[Updated] datetime not null,
+	PRIMARY KEY CLUSTERED ([Id] ASC)
+)
+
+alter table Category add constraint category_fk0 foreign key (BookId) references Book
+
+
+CREATE TABLE [dbo].[Author] (
+    [Id]   BIGINT IDENTITY (1, 1) NOT NULL,
+	[BookId] BIGINT NOT NULL, 
+	[Name] nvarchar(200) not null,
+	[Created] datetime not null, 
+	[Updated] datetime not null,
+	PRIMARY KEY CLUSTERED ([Id] ASC)
+)
+
+alter table Author add constraint author_fk0 foreign key (BookId) references Book
+

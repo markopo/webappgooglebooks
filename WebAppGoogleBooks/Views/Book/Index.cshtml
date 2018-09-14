@@ -1,0 +1,17 @@
+﻿@using WebAppGoogleBooks.Models.ViewModels;
+
+@model BookViewModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Books</h2>
+
+<ul>
+    @foreach (var book in Model.Books)
+    {
+        <li><a href="@Url.Action("Details", new { id = book.Id })">@book.Title</a></li>
+    }
+
+</ul>
