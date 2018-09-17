@@ -7,6 +7,7 @@ using NHibernate.Cfg;
 using NHibernate.Linq;
 using Microsoft.AspNetCore.Hosting;
 using System.IO;
+using GoogleBooksDAL.Models; 
 
 namespace WebAppGoogleBooks.Models.Repositories
 {

@@ -13,15 +13,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="wwwroot\nh\Book.hbm.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="wwwroot\nh\hibernate.cfg.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
     <PackageReference Include="NHibernate" Version="5.1.3" />
@@ -29,6 +20,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\google-books-retrieval\GoogleBooksRetriever\GoogleBooksRetriever.csproj" />
+    <ProjectReference Include="..\GoogleBooksDAL\GoogleBooksDAL.csproj" />
   </ItemGroup>
 
 </Project>

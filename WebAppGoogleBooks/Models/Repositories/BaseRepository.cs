@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using NHibernate;
 using Microsoft.AspNetCore.Hosting;
+using GoogleBooksDAL;
+using GoogleBooksDAL.Models;
 
 
 namespace WebAppGoogleBooks.Models.Repositories

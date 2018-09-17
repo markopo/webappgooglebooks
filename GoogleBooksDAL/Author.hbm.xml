@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
-                   assembly="WebAppGoogleBooks"
-                   namespace="WebAppGoogleBooks.Models">
+                   assembly="GoogleBooksDAL"
+                   namespace="GoogleBooksDAL.Models">
 
-  <class name="Category" table="Category" dynamic-update="true" >
+  <class name="Author" table="Author" dynamic-update="true" >
     <cache usage="read-write"/>
     <id name="Id">
       <generator class="native" />

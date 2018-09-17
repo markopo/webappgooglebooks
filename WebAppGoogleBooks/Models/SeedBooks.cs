@@ -6,7 +6,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using WebAppGoogleBooks.Models.Repositories;
 using GoogleBooksRetriever;
-using System.Threading; 
+using System.Threading;
+using GoogleBooksDAL.Models;
 
 namespace WebAppGoogleBooks.Models
 {

@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2035
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAppGoogleBooks", "WebAppGoogleBooks\WebAppGoogleBooks.csproj", "{145148F0-1BAE-4EE3-AD8E-37C46C07B42D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAppGoogleBooks", "WebAppGoogleBooks\WebAppGoogleBooks.csproj", "{145148F0-1BAE-4EE3-AD8E-37C46C07B42D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoogleBooksRetriever", "google-books-retrieval\GoogleBooksRetriever\GoogleBooksRetriever.csproj", "{A546677E-C816-44C8-84FF-FD6C78F267ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoogleBooksDAL", "GoogleBooksDAL\GoogleBooksDAL.csproj", "{22826C5D-D730-409D-8D9B-9C441A584244}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{A546677E-C816-44C8-84FF-FD6C78F267ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A546677E-C816-44C8-84FF-FD6C78F267ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A546677E-C816-44C8-84FF-FD6C78F267ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22826C5D-D730-409D-8D9B-9C441A584244}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22826C5D-D730-409D-8D9B-9C441A584244}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22826C5D-D730-409D-8D9B-9C441A584244}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22826C5D-D730-409D-8D9B-9C441A584244}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
